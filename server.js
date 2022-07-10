@@ -11,6 +11,10 @@ const PORT = process.env.PORT || 3001;
 // use Ctrl+C to end the server
 const app = express();
 
+//router objects
+// const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes');
+
 //-----REQUIRED MIDDLEWARE-------------------------------------------------------
 
 //both of these are required to receive and interpret POST requests
@@ -23,6 +27,11 @@ app.use(express.json());
 //makes the whole 'public' folder available
 //otherwise would need to create endpoints for each js and css file for each page
 app.use(express.static('public'));
+
+//required to parse the router objects from the /routes/ folder
+// app.use('/api', apiRoutes);
+app.use('/', htmlRoutes);
+
 
 
 //------FUNCTIONS----------------------------------------------------------------
