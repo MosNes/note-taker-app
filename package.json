@@ -1,12 +1,12 @@
 {
   "name": "note-taker",
   "version": "1.0.0",
-  "description": "",
+  "description": "A note taking web app built with express.js",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
-  "author": "",
+  "author": "MosNes",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4"
