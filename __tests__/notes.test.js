@@ -36,3 +36,27 @@ test('Deletes a note object', () => {
     expect(notesArray[0].id).toEqual("blorpleflorb");
     expect(result2.length).toEqual(1);
 });
+
+test('validates input for creating new notes', () => {
+    const validNote = {
+        title:"Test Title",
+        text:"Test text",
+        id: "bleeplefreeb"
+    };
+    const invalidNote = {
+        title: "This is Bad",
+        id: "blooplegoop"
+    };
+    const invalidNote2 = {
+        text: "This is also Bad",
+        id: "horbyflorp"
+    }
+
+    const result = validateNote(validNote);
+    const result2 = validateNote(invalidNote);
+    const result3 = validateNote(invalidNote2);
+
+    expect(result).toEqual(true);
+    expect(result2).toEqual(false);
+    expect(result3).toEqual(false);
+})
