@@ -2,7 +2,7 @@
 
 //-----DEPENDENCIES AND GLOBAL VARIABLES-----------------------------------------
 const path = require('path');
-const { notes } = require('../../db/db.json');
+const notes = require('../../db/db.json');
 const router = require('express').Router();
 
 
