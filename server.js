@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 //router objects
-// const apiRoutes = require('./routes/apiRoutes');
+const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
 
 //-----REQUIRED MIDDLEWARE-------------------------------------------------------
@@ -29,7 +29,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 //required to parse the router objects from the /routes/ folder
-// app.use('/api', apiRoutes);
+app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
 

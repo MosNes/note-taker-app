@@ -2,8 +2,9 @@
 
 //-----DEPENDENCIES AND GLOBAL VARIABLES-----------------------------------------
 const path = require('path');
-const router = require('express').Router();
 const { notes } = require('../../db/db.json');
+const router = require('express').Router();
+
 
 
 //------------ROUTES-------------------------------------
@@ -14,6 +15,5 @@ router.get('/notes',(req,res)=>{
 
     res.json(results);
 });
-
 
 module.exports = router;
