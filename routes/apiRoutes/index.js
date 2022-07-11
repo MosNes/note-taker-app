@@ -10,6 +10,19 @@ const router = require('express').Router();
 
 //------------ROUTES-------------------------------------
 
+//create route to DELETE note from db.json
+router.delete('/notes/:id', (req, res) => {
+    // const result = deleteNote(req.params.id, notes);
+   console.log("attempting to delete " + req.params.id);
+   const result = deleteNote(req.params.id, notes)
+   if (result) {
+    res.json(result);
+   } else {
+    res.status(400).send("ID not Found.");
+   }
+    
+});
+
 //creates Route to GET notes from db.json
 router.get('/notes', (req, res) => {
     let results = notes;
@@ -28,8 +41,5 @@ router.post('/notes', (req, res) => {
         res.json(note);
     }
 });
-
-//create route to DELETE note from db.json
-
 
 module.exports = router;
