@@ -1,17 +1,12 @@
 [
   {
-    "title": "Test Title",
-    "text": "Test text",
-    "id": "bleeplefreeb"
+    "title": "Example Note 1",
+    "text": "This is just an example. Please delete.",
+    "id": "1cc2bbeb-2901-4af7-9e87-19789bb3586d"
   },
   {
-    "title": "Test Title 2",
-    "text": "Test Text",
-    "id": "blorpleflorb"
-  },
-  {
-    "title": "Glarb",
-    "text": "Flibble",
-    "id": "1b0ccdc4-7c29-4bb0-801b-5e32ba585977"
+    "title": "Example Note 2",
+    "text": "This is just an example. Please delete.",
+    "id": "94f88c6b-6c68-40b0-b48e-74574effe52e"
   }
 ]

@@ -1,6 +1,7 @@
 //this index.js collects all of the HTML-related routes into a single file for exporting to server.js
 
 //-----DEPENDENCIES AND GLOBAL VARIABLES-----------------------------------------
+const fs = require('fs');
 const path = require('path');
 const { createNewNote, deleteNote, validateNote } = require('../../lib/notes');
 const notes = require('../../db/db.json');
@@ -30,10 +31,16 @@ router.post('/notes', (req, res) => {
 
 //create route to DELETE note from db.json
 router.delete('/notes/:id', (req, res) => {
-    // const result = deleteNote(req.params.id, notes);
    console.log("attempting to delete " + req.params.id);
    const result = deleteNote(req.params.id, notes)
+   notes.splice(0, notes.length);
+   result.forEach(element => notes.push(element));
    if (result) {
+    //overwrites the existing db.json with the new notes array
+    fs.writeFileSync(
+        path.join(__dirname, '../../db/db.json'),
+        JSON.stringify(notes, null, 2)
+    );
     res.json(result);
    } else {
     res.status(400).send("ID not Found.");
